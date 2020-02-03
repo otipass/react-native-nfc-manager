@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.provider.Settings;
 import com.facebook.react.bridge.*;
@@ -972,8 +971,7 @@ class NfcManager extends ReactContextBaseJavaModule implements ActivityEventList
         return techLists.toArray(new String[0][0]);
     }
 
-    private void sendEvent(String eventName,
-                           @Nullable WritableMap params) {
+    private void sendEvent(String eventName,WritableMap params) {
         getReactApplicationContext()
                 .getJSModule(RCTNativeAppEventEmitter.class)
                 .emit(eventName, params);
